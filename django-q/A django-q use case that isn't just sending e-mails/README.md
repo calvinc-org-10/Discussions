@@ -1,4 +1,4 @@
-#A django-q use case that isn't just sending e-mails
+# A django-q use case that isn't just sending e-mails
 After YEARS of dodging it, I finally had to learn how to implement parts of a system asynchronously. My system, called WICS (Warehouse Inventory Control System), schedules and records physical inventories and facilitates comparison with SAP, which is the Source Of All Truth in my company. SAP stock-on-hand is exported through MB52 to a spreadsheet daily and imported into WICS. The Master Material List is exported from MM60 to a spreadsheet and used to update the WICS Material List once a month or so. Both of these processes involve queries that take a while to run, and the Material List update routinely takes long enough that my web server delivers a 504 (timeout) response.
 
 The back-end of WICS is written in Python/Django.
